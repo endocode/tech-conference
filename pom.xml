@@ -6,7 +6,10 @@
 	<groupId>com.ancestry.services</groupId>
 	<artifactId>phone-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>web</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>phone-service</name>
 	<description>Demo project for Ancestry tech conference.</description>
