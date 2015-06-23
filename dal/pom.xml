@@ -9,20 +9,24 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>phone-service-domain</artifactId>
+    <artifactId>phone-service-dal</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.libphonenumber</groupId>
-            <artifactId>libphonenumber</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.ancestry.services</groupId>
-            <artifactId>phone-service-dal</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.reactivex</groupId>
             <artifactId>rxjava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
     </dependencies>
 </project>

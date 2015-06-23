@@ -9,6 +9,7 @@
 	<modules>
 		<module>web</module>
 		<module>domain</module>
+		<module>dal</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -27,6 +28,12 @@
 		<java.version>1.8</java.version>
 
 		<libphonenumber.version>7.0.6</libphonenumber.version>
+
+		<!-- RX Java, Ribbon, and Netty Versions -->
+		<rxjava.version>1.0.10</rxjava.version>
+		<ribbon.version>2.1.0</ribbon.version>
+		<netty.version>4.0.27.Final</netty.version>
+		<rxnetty.version>0.4.9</rxnetty.version>
 	</properties>
 
 
@@ -38,9 +45,34 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.ancestry.services</groupId>
+				<artifactId>phone-service-dal</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>com.googlecode.libphonenumber</groupId>
 				<artifactId>libphonenumber</artifactId>
 				<version>${libphonenumber.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.reactivex</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>${rxjava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netflix.ribbon</groupId>
+				<artifactId>ribbon</artifactId>
+				<version>${ribbon.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-all</artifactId>
+				<version>${netty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.reactivex</groupId>
+				<artifactId>rxnetty</artifactId>
+				<version>${rxnetty.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
