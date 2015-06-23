@@ -3,6 +3,7 @@ package phone.service.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
 import phone.service.domain.PhoneNormalizationService;
@@ -21,7 +22,7 @@ public class PhoneController {
     @Autowired
     private UserPhoneNormalizationService userPhoneNormalizationService;
 
-    @RequestMapping("/phones/{phoneNumber}")
+    @RequestMapping(value = "/phones/{phoneNumber}", method = RequestMethod.GET)
     public NormalizedPhone getNormalizedPhone(@PathVariable("phoneNumber") String phoneNumber) {
 
         final PhoneNumber domainPhone = new PhoneNumber.Builder()
@@ -38,7 +39,7 @@ public class PhoneController {
      * @param userId The Long value of the user Id.
      * @return The deferred result.
      */
-    @RequestMapping("/users/{userId}")
+    @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
     public DeferredResult<NormalizedUser> getUser(@PathVariable("userId") Long userId) {
         final DeferredResult<NormalizedUser> result = new DeferredResult<>();
         // The Observable behaves like an IEnumerator but subscribes to Next instead of polling for Next.
@@ -51,7 +52,7 @@ public class PhoneController {
         return result;
     }
 
-    @RequestMapping("/users/{userId}/phone")
+    @RequestMapping(value = "/users/{userId}/phone", method = RequestMethod.GET)
     public DeferredResult<NormalizedPhone> getUserPhone(@PathVariable("userId") Long userId){
         final DeferredResult<NormalizedPhone> result = new DeferredResult<>();
         userPhoneNormalizationService.getNormalizedPhone(userId.toString())

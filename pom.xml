@@ -34,6 +34,9 @@
 		<ribbon.version>2.1.0</ribbon.version>
 		<netty.version>4.0.27.Final</netty.version>
 		<rxnetty.version>0.4.9</rxnetty.version>
+
+		<!-- Documentation version -->
+		<springfox.version>2.0.2</springfox.version>
 	</properties>
 
 
@@ -73,6 +76,24 @@
 				<groupId>io.reactivex</groupId>
 				<artifactId>rxnetty</artifactId>
 				<version>${rxnetty.version}</version>
+			</dependency>
+			<!-- Swagger Dependency -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-parent</artifactId>
+				<version>1.0.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
