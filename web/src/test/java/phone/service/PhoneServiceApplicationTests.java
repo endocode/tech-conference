@@ -11,6 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
+import phone.service.model.test.NormalizedPhone;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -33,14 +34,15 @@ public class PhoneServiceApplicationTests extends IntegrationTestBase {
 				.setConnectTimeout(1000)
 				.setReadTimeout(1000)
 				.build();
-		final ResponseEntity<String> responseEntity = restTemplate.getForEntity(
+		final ResponseEntity<NormalizedPhone> responseEntity = restTemplate.getForEntity(
 				phoneNormalizationTemplate,
-				String.class,
+				NormalizedPhone.class,
 				new UrlParamsBuilder()
 						.addParam("port", Integer.toString(port))
-						.addParam("phoneNumber", "8012349000")
+						.addParam("phoneNumber", "801-234-9000")
 						.build());
 		assertThat("The phone number request should return OK/200.", responseEntity.getStatusCode(), is(HttpStatus.OK));
+		assertThat("The phone number should be normalized.", responseEntity.getBody().getPhoneNumber(), is("8012349000"));
 	}
 
 }

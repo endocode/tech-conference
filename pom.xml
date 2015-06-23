@@ -8,6 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
 		<module>web</module>
+		<module>domain</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -24,6 +25,23 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+
+		<libphonenumber.version>7.0.6</libphonenumber.version>
 	</properties>
 
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ancestry.services</groupId>
+				<artifactId>phone-service-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.libphonenumber</groupId>
+				<artifactId>libphonenumber</artifactId>
+				<version>${libphonenumber.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
