@@ -12,6 +12,10 @@
 
     <artifactId>phone-service-web</artifactId>
 
+    <properties>
+        <mainClass>phone.service.PhoneServiceApplication</mainClass>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
