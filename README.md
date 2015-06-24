@@ -19,11 +19,11 @@ Run the project locally:
 
 Once the demo is running, you can access the following:
 
-* Basic phone normalization request: http://localhost:8080/api/phones/801-234-5678
-* Basic normalized user request: http://localhost:8080/api/users/3
-* API documentation: http://localhost:8080/swagger-ui.html
+* Basic phone normalization request: [http://localhost:8080/api/phones/801-234-5678](http://localhost:8080/api/phones/801-234-5678)
+* Basic normalized user request: [http://localhost:8080/api/users/3](http://localhost:8080/api/users/3)
+* API documentation: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 * [Hystrix dashboard](http://localhost:8080/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8080%2Fhystrix.stream)
-* Performance monitoring endpoint: http://localhost:8080/metrics
+* Performance monitoring endpoint: [http://localhost:8080/metrics](http://localhost:8080/metrics)
 
 The demo stops short of adding framework logging or building a WAR file.  A sample project with these features can be [found in Stash](https://stash.myfamilysouth.com/projects/JDC/repos/demo-service-spring/browse).
 
